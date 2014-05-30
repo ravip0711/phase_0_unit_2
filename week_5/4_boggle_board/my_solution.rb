@@ -14,6 +14,18 @@ boggle_board = [["b", "r", "a", "e"],
 
 # Initial Solution
 
+class BoggleBoard
+
+	def initialize(board)
+		@board = board
+	end
+
+	def get_row(row)
+		@board
+	end
+
+end
+
 
 # Refactored Solution
 
