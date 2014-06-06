@@ -53,26 +53,39 @@
 # Initial Solution
 
 
+boggle_board = [["b", "r", "a", "e"],
+        ["i", "o", "d", "t"],
+        ["e", "c", "l", "r"],
+        ["t", "a", "k", "e"]]
+
+
 class BoggleBoard
+  attr_reader :board
 
   def initialize(board)
     @board = board
   end
-
+  
   def get_row(row)
     @board[row]
   end
  
   def get_col(col)
-    @board.map {|colm| colm[col]}
+    @board.map { |sub_array| sub_array[col] }
   end
-
-  def board(get_row, get_col) # I can't get this to work out, I tried too many ways
-    @get_row = get_row
-    @get_col = get_col
-    @get_row + @get_col
+  
+  def create_word(boggle_board, *coords)
+    coords.map { |coord| boggle_board[coord.first][coord.last]}.join("")
   end
+  
+  # def board(get_row, get_col) # I can't get this to work out, I tried too many ways
+  #   @get_row = get_row
+  #   @get_col = get_col
+  #   @get_row + @get_col
+  # end
 end
+
+game = BoggleBoard.new(boggle_board)
 
 # puts create_word(board, [2,1], [1,1], [1,2], [0,3])
 
@@ -84,6 +97,16 @@ end
 #game = BoggleBoard.new[["b", "r", "a", "e"],["i", "o", "d", "t"],["e", "c", "l", "r"],["t", "a", "k", "e"]]
 #game.get_row(0) => ["b", "r", "a", "e"]
 #game.get_col(0) => ["b", "i", "e", "t"]
+
+puts game.board == boggle_board
+puts game.get_row(0) == ["b", "r", "a", "e"]
+puts game.get_col(1) == ["r", "o", "c", "a"]
+
+puts boggle_board[0][1] == "r"   # returns boggle_board[row_number][column_number]
+puts boggle_board[2][1] == "c" #=> should be true
+puts boggle_board[3][3] == "e" #=> should be true
+puts boggle_board[2][3] == "x" #=> should be false
+puts game.create_word(boggle_board, [2,1], [1,1], [1,2], [0,3])  == "code"
 
 
 # Reflection 
