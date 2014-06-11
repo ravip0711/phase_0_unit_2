@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Week 6 Technical Blog</title>
+</head>
+<body>
+	<div>
+		<h1>Week 6 Technical Blog Variable Scope</h1>
+			<p>
+				So what are classes? You'll hear the typical answer that classes are the blueprint. So what do they blueprint? Classes are the blueprint of objects, basically the layout of objects within a certain type. An example would be like vehicles. Vehicles can be the object class. When we create a new object called car, it will be within the class of vehicles. So why do we use classes? Ruby is an object-oriented programming language. An object-oriented programming language involves classes and objects. We use classes as the plan and create objects within that plan.
+			</p>
+				<p>
+				So when we create a new class we have use the following syntax. The class name always starts with a capital letter.
+				</p>
+				<P>
+				class Vehicles
+				end
+				</p>
+				<p>
+				Then we use the initialize method to create a new object. 
+				</p>
+				<p>
+				class Vehicles
+					def initalize(type)
+					end
+				end
+				</p>
+				<p>
+				Within the initalize method we create variables. There are 4 different variable types:
+				</p>
+				<p>
+				Local Variables: These variables begin with a lowercase letter or an underscore. These variables are only defined in the method.
+				</p>
+				<p>
+				Instance Variables: These variables begin with "@"". So the variable car would be @car. Instance variables are defined throughout all the methods within the class.
+				</p>
+				<p>
+				Class Variables: These variables start with "@@". So the variable car would be @@car. Class variables are defined throughout the class as it is a characteristic of the class.
+				</p>
+				<p>
+				Global Variables: These variables begin with "$". So the variable car would be translated to $car. These variables are available across classes within a program.
+				</p>
+				<p>
+				For this example we'll use instance variables so that we can use the variables throughout the methods within the class.
+				</p>
+				<p>
+				Here is the code for finding out your favorite type of vehicle.
+				</p>
+				<p>
+				class Vehicles
+					def initalize(type)
+					@type = type
+					end
+					def favorite
+					 if @type == "car"
+					 "#{@type.capitalize} is your favorite vehicle to ride in."
+					 elsif
+					 @type == "motorcycle"
+					 #{@type.capitalize} is your favorite vehicle to ride in."
+					 elsif
+					 @type == "airplane"
+					 "#{@type.capitalize} is your favorite vehicle to ride in."
+					 else
+					 raise ArgumentError("You must pick from car, motorcycle, or airplane.")
+					 end
+					 end
+					end
+				</p>
+				<p>
+				With this program, you can be prompt for what type of vehicle you like to ride in. When the user puts an input of car, motorcycle, or airplane, the program will return a statement saying your input is your favorite vehicle to ride in. If you do not input car, motorcycle, airplane, it will raise an argument which basically will bring up a statement that says you can only select from a car, motorcycle, or airplane.
+				</p>
+				<p>	
+				Recommended Reads: http://juixe.com/techknow/index.php/2007/01/22/ruby-class-tutorial/
+				</p>
+	</div>
+</body>
+</html>
